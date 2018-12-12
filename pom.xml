@@ -8,7 +8,7 @@
   </parent>
 
   <artifactId>java11-parent</artifactId>
-  <version>1.1</version>
+  <version>1.2-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>java11-parent</name>
 
@@ -28,7 +28,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:avaje-pom/java11-parent.git</developerConnection>
-    <tag>java11-parent-1.1</tag>
+    <tag>HEAD</tag>
   </scm>
 
   <build>
