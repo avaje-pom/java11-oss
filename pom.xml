@@ -4,12 +4,12 @@
 
   <parent>
     <groupId>org.avaje</groupId>
-    <artifactId>oss-parent</artifactId>
-    <version>1.1</version>
+    <artifactId>java8-oss</artifactId>
+    <version>2.2</version>
   </parent>
 
-  <artifactId>java11-parent</artifactId>
-  <version>1.2-SNAPSHOT</version>
+  <artifactId>java11-oss</artifactId>
+  <version>2.1-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>java11-parent</name>
 
