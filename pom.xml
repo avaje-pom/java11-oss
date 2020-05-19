@@ -39,6 +39,7 @@
 
   <scm>
     <developerConnection>scm:git:git@github.com:avaje-pom/java11-parent.git</developerConnection>
+    <url>git@github.com:avaje-pom/java11-parent.git</url>
     <tag>HEAD</tag>
   </scm>
 
