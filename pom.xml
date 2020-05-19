@@ -3,7 +3,7 @@
 
   <groupId>org.avaje</groupId>
   <artifactId>java11-oss</artifactId>
-  <version>2.1.2-SNAPSHOT</version>
+  <version>2.1.2</version>
   <packaging>pom</packaging>
   <name>java11-oss</name>
 
@@ -40,7 +40,7 @@
   <scm>
     <developerConnection>scm:git:git@github.com:avaje-pom/java11-parent.git</developerConnection>
     <url>git@github.com:avaje-pom/java11-parent.git</url>
-    <tag>HEAD</tag>
+    <tag>java11-oss-2.1.2</tag>
   </scm>
 
   <distributionManagement>
