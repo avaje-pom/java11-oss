@@ -1,2 +1,2 @@
-# java11-parent
-Java 11 based parent pom
+# java11-oss
+Java 11 based parent pom for OSS projects
