@@ -12,14 +12,16 @@
   </description>
 
   <properties>
+    <nexus.staging.autoReleaseAfterClose>true</nexus.staging.autoReleaseAfterClose>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <javadoc.source>11</javadoc.source>
     <java.release>11</java.release>
     <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
     <maven-javadoc-plugin.version>3.2.0</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
-    <maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
+    <maven-release-plugin.version>3.0.0-M1</maven-release-plugin.version>
   </properties>
 
   <url>http://www.avaje.org</url>
@@ -68,7 +70,7 @@
         <configuration>
           <serverId>ossrh</serverId>
           <nexusUrl>https://oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          <autoReleaseAfterClose>${nexus.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
         </configuration>
       </plugin>
 
@@ -131,7 +133,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-        <version>2.5.3</version>
+        <version>${maven-release-plugin.version}</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
           <useReleaseProfile>false</useReleaseProfile>
