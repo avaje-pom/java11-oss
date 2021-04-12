@@ -103,6 +103,7 @@
         <artifactId>maven-javadoc-plugin</artifactId>
         <version>${maven-javadoc-plugin.version}</version>
         <configuration>
+          <release>${java.release}</release>
           <additionalJOption>-Xdoclint:none</additionalJOption>
         </configuration>
         <executions>
