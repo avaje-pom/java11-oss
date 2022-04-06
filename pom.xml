@@ -3,7 +3,7 @@
 
   <groupId>org.avaje</groupId>
   <artifactId>java11-oss</artifactId>
-  <version>3.6</version>
+  <version>3.7</version>
   <packaging>pom</packaging>
   <name>java11-oss</name>
 
@@ -18,8 +18,8 @@
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
-    <maven-surefire-plugin.version>3.0.0-M5</maven-surefire-plugin.version>
-    <maven-failsafe-plugin.version>3.0.0-M5</maven-failsafe-plugin.version>
+    <maven-surefire-plugin.version>3.0.0-M6</maven-surefire-plugin.version>
+    <maven-failsafe-plugin.version>3.0.0-M6</maven-failsafe-plugin.version>
     <maven-release-plugin.version>3.0.0-M5</maven-release-plugin.version>
   </properties>
 
