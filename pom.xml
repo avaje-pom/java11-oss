@@ -3,7 +3,7 @@
 
   <groupId>org.avaje</groupId>
   <artifactId>java11-oss</artifactId>
-  <version>3.7</version>
+  <version>3.8</version>
   <packaging>pom</packaging>
   <name>java11-oss</name>
 
@@ -12,9 +12,9 @@
   </description>
 
   <properties>
+    <java.release>11</java.release>
     <nexus.staging.autoReleaseAfterClose>true</nexus.staging.autoReleaseAfterClose>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <java.release>11</java.release>
     <maven-compiler-plugin.version>3.10.1</maven-compiler-plugin.version>
     <maven-javadoc-plugin.version>3.3.2</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.2.1</maven-source-plugin.version>
@@ -46,32 +46,9 @@
     <tag>HEAD</tag>
   </scm>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
   <!-- make sure source and javadocs are included in artifacts on release -->
   <build>
     <plugins>
-
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-        <version>1.6.12</version>
-        <extensions>true</extensions>
-        <configuration>
-          <serverId>ossrh</serverId>
-          <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
-          <autoReleaseAfterClose>${nexus.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
-        </configuration>
-      </plugin>
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -121,7 +98,6 @@
         <version>${maven-release-plugin.version}</version>
         <configuration>
           <autoVersionSubmodules>true</autoVersionSubmodules>
-          <useReleaseProfile>false</useReleaseProfile>
           <goals>deploy</goals>
         </configuration>
       </plugin>
@@ -144,15 +120,36 @@
 
   <profiles>
     <profile>
-      <id>release</id>
+      <id>central</id>
       <activation>
         <property>
           <name>performRelease</name>
           <value>true</value>
         </property>
       </activation>
+      <distributionManagement>
+        <snapshotRepository>
+          <id>ossrh</id>
+          <url>https://s01.oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+          <id>ossrh</id>
+          <url>https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+      </distributionManagement>
       <build>
         <plugins>
+          <plugin>
+            <groupId>org.sonatype.plugins</groupId>
+            <artifactId>nexus-staging-maven-plugin</artifactId>
+            <version>1.6.12</version>
+            <extensions>true</extensions>
+            <configuration>
+              <serverId>ossrh</serverId>
+              <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+              <autoReleaseAfterClose>${nexus.staging.autoReleaseAfterClose}</autoReleaseAfterClose>
+            </configuration>
+          </plugin>
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
