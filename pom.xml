@@ -58,7 +58,6 @@
         <configuration>
           <release>${java.release}</release>
           <compilerArgument>-Xlint:all</compilerArgument>
-          <compilerArgument>-proc:full</compilerArgument>
         </configuration>
       </plugin>
 
@@ -182,6 +181,23 @@
                 </goals>
               </execution>
             </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>    
+    <profile>
+      <id>jdk22plus</id>
+      <activation>
+        <jdk>[21, 22]</jdk>
+      </activation>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <configuration>
+              <compilerArgs>-proc:full</compilerArgs>
+            </configuration>
           </plugin>
         </plugins>
       </build>
