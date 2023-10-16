@@ -3,7 +3,7 @@
 
   <groupId>org.avaje</groupId>
   <artifactId>java11-oss</artifactId>
-  <version>3.11</version>
+  <version>3.12</version>
   <packaging>pom</packaging>
   <name>java11-oss</name>
 
