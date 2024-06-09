@@ -13,9 +13,10 @@
 
   <properties>
     <maven.compiler.release>11</maven.compiler.release>
+    <maven.compiler.proc>full</maven.compiler.proc>
     <nexus.staging.autoReleaseAfterClose>true</nexus.staging.autoReleaseAfterClose>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <maven-compiler-plugin.version>3.11.0</maven-compiler-plugin.version>
+    <maven-compiler-plugin.version>3.13.0</maven-compiler-plugin.version>
     <maven-javadoc-plugin.version>3.6.2</maven-javadoc-plugin.version>
     <maven-source-plugin.version>3.3.0</maven-source-plugin.version>
     <maven-surefire-plugin.version>3.2.2</maven-surefire-plugin.version>
@@ -178,24 +179,6 @@
                 </goals>
               </execution>
             </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-
-    <profile>
-      <id>jdk22plus</id>
-      <activation>
-        <jdk>[21, 22]</jdk>
-      </activation>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-compiler-plugin</artifactId>
-            <configuration>
-              <compilerArgs>-proc:full</compilerArgs>
-            </configuration>
           </plugin>
         </plugins>
       </build>
