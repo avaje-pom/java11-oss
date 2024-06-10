@@ -3,7 +3,7 @@
 
   <groupId>org.avaje</groupId>
   <artifactId>java11-oss</artifactId>
-  <version>4.2</version>
+  <version>4.3</version>
   <packaging>pom</packaging>
   <name>java11-oss</name>
 
@@ -63,6 +63,7 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
+          <argLine>-Dnet.bytebuddy.experimental=true</argLine>
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
@@ -71,6 +72,9 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>${maven-failsafe-plugin.version}</version>
+        <configuration>
+          <argLine>-Dnet.bytebuddy.experimental=true</argLine>
+        </configuration>
       </plugin>
 
       <plugin>
