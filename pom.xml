@@ -3,7 +3,7 @@
 
   <groupId>org.avaje</groupId>
   <artifactId>java11-oss</artifactId>
-  <version>4.3</version>
+  <version>4.4</version>
   <packaging>pom</packaging>
   <name>java11-oss</name>
 
@@ -12,6 +12,7 @@
   </description>
 
   <properties>
+    <argLine>-Dnet.bytebuddy.experimental=true</argLine>
     <maven.compiler.release>11</maven.compiler.release>
     <maven.compiler.proc>full</maven.compiler.proc>
     <nexus.staging.autoReleaseAfterClose>true</nexus.staging.autoReleaseAfterClose>
@@ -63,7 +64,6 @@
         <artifactId>maven-surefire-plugin</artifactId>
         <version>${maven-surefire-plugin.version}</version>
         <configuration>
-          <argLine>-Dnet.bytebuddy.experimental=true</argLine>
           <trimStackTrace>false</trimStackTrace>
         </configuration>
       </plugin>
@@ -72,9 +72,6 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-failsafe-plugin</artifactId>
         <version>${maven-failsafe-plugin.version}</version>
-        <configuration>
-          <argLine>-Dnet.bytebuddy.experimental=true</argLine>
-        </configuration>
       </plugin>
 
       <plugin>
@@ -137,6 +134,7 @@
             <configuration>
               <release>${java.release}</release>
               <additionalJOption>-Xdoclint:none</additionalJOption>
+              <additionalOptions>--enable-preview</additionalOptions>
             </configuration>
             <executions>
               <execution>
