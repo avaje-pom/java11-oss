@@ -158,7 +158,7 @@
     </profile>
     
     <profile>
-      <id>jdk21Plus</id>
+      <id>jdk21PlusSurefire</id>
       <activation>
         <jdk>[21,)</jdk>
       </activation>
